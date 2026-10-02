@@ -4,11 +4,14 @@ import cv2
 import numpy as np
 import requests
 import streamlit as st
+from dotenv import load_dotenv
 from PIL import Image
+
+load_dotenv()
 
 st.set_page_config(page_title="AI Studio & Smart Photo Editor", layout="wide")
 
-HF_TOKEN = "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"
+HF_TOKEN = os.getenv("HF_TOKEN", "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")
 
 
 def generate_image(prompt):
